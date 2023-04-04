@@ -46,8 +46,3 @@ This fix will keep the system going until the hardware fails
 
 
 
-
-img popup:
-- onclick open image-viever overlay, grow from middle, and set image as source for current image
-- make menu to x and acts as close
-- 
