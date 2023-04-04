@@ -1,0 +1,154 @@
+/* font weights */
+:root {
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-bolder: 900;
+
+    --font-color-primary: #222725;
+}
+
+h3 {
+    font-size: 1.4em !important;
+}
+p {
+    font-size: 1.2em !important;
+}
+
+/* Jokker */
+/* base */
+@font-face {
+    font-family: 'Jokker-base';
+    src: 
+    url('jokker/JokkerTRIALVF.woff') format('woff'),
+    url('jokker/JokkerTRIALVF.woff2') format('woff2'),
+    url('jokker/JokkerTRIALVF.ttf') format('truetype');
+}
+/* Bold */
+@font-face {
+    font-family: 'Jokker-bold';
+    font-weight: var(--font-weight-bold);
+    src: 
+    url('jokker/JokkerTRIAL-Bold.woff') format('woff'),
+    url('jokker/JokkerTRIAL-Bold.woff2') format('woff2');
+}
+/* BoldItalic */
+@font-face {
+    font-family: 'Jokker-bold-italic';
+    font-weight: var(--font-weight-bold);
+    font-style: italic;
+    src: 
+    url('jokker/JokkerTRIAL-BoldItalic.woff') format('woff'),
+    url('jokker/JokkerTRIAL-BoldItalic.woff2') format('woff2');
+}
+/* Heavy */
+@font-face {
+    font-family: 'Jokker-bolder';
+    font-weight: var(--font-weight-bolder);
+    src: 
+    url('jokker/JokkerTRIAL-Heavy.woff') format('woff'),
+    url('jokker/JokkerTRIAL-Heavy.woff2') format('woff2');
+}
+/* HeavyItalic */
+@font-face {
+    font-family: 'Jokker-bolder-italic';
+    font-weight: var(--font-weight-bolder);
+    font-style: italic;
+    src: 
+    url('jokker/JokkerTRIAL-HeavyItalic.woff') format('woff'),
+    url('jokker/JokkerTRIAL-HeavyItalic.woff2') format('woff2');
+}
+/* Light */
+@font-face {
+    font-family: 'Jokker-light';
+    font-weight: var(--font-weight-light);
+    src: 
+    url('jokker/JokkerTRIAL-Light.woff') format('woff'),
+    url('jokker/JokkerTRIAL-Light.woff2') format('woff2');
+}
+/* LightItalic */
+@font-face {
+    font-family: 'Jokker-light-italic';
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+    src: 
+    url('jokker/JokkerTRIAL-LightItalic.woff') format('woff'),
+    url('jokker/JokkerTRIAL-LightItalic.woff2') format('woff2');
+}
+/* Medium */
+@font-face {
+    font-family: 'Jokker-medium';
+    font-weight: var(--font-weight-medium);
+    src: 
+    url('jokker/JokkerTRIAL-Medium.woff') format('woff'),
+    url('jokker/JokkerTRIAL-Medium.woff2') format('woff2');
+}
+/* MediumItalic */
+@font-face {
+    font-family: 'Jokker-medium-italic';
+    font-weight: var(--font-weight-medium);
+    font-style: italic;
+    src: 
+    url('jokker/JokkerTRIAL-MediumItalic.woff') format('woff'),
+    url('jokker/JokkerTRIAL-MediumItalic.woff2') format('woff2');
+}
+/* Regular */
+@font-face {
+    font-family: 'Jokker-regular';
+    font-weight: var(--font-weight-regular);
+    src: 
+    url('jokker/JokkerTRIAL-Regular.woff') format('woff'),
+    url('jokker/JokkerTRIAL-Regular.woff2') format('woff2');
+}
+/* RegularItalic */
+@font-face {
+    font-family: 'Jokker-regular-italic';
+    font-weight: var(--font-weight-regular);
+    font-style: italic;
+    src: 
+    url('jokker/JokkerTRIAL-RegularItalic.woff') format('woff'),
+    url('jokker/JokkerTRIAL-RegularItalic.woff2') format('woff2');
+}
+/* Semibold */
+@font-face {
+    font-family: 'Jokker-semibold';
+    font-weight: var(--font-weight-semibold);
+    src: 
+    url('jokker/JokkerTRIAL-Semibold.woff') format('woff'),
+    url('jokker/JokkerTRIAL-Semibold.woff2') format('woff2');
+}
+/* SemiboldItalic */
+@font-face {
+    font-family: 'Jokker-semibold-italic';
+    font-weight: var(--font-weight-semibold);
+    font-style: italic;
+    src: 
+    url('jokker/JokkerTRIAL-SemiboldItalic.woff') format('woff'),
+    url('jokker/JokkerTRIAL-SemiboldItalic.woff2') format('woff2');
+}
+/* Thin */
+@font-face {
+    font-family: 'Jokker-light';
+    font-weight: var(--font-weight-light);
+    src: 
+    url('jokker/JokkerTRIAL-Thin.woff') format('woff'),
+    url('jokker/JokkerTRIAL-Thin.woff2') format('woff2');
+}
+/* ThinItalic */
+@font-face {
+    font-family: 'Jokker-light-italic';
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+    src: 
+    url('jokker/JokkerTRIAL-ThinItalic.woff') format('woff'),
+    url('jokker/JokkerTRIAL-ThinItalic.woff2') format('woff2');
+}
+
+h1 {
+    font-family: 'Jokker-semibold';
+    font-weight: var(--font-weight-semibold);
+    font-size: 2.2rem;
+    color: var(--font-color-primary);
+}
