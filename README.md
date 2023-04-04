@@ -1,7 +1,5 @@
 # JORM.io
 Website for JORM.io
-cp -a /home/dunderklumpen/jorm/jorm.io/. /var/www/jorm.io/html/ && sudo systemctl restart nginx
-
 
 
 
@@ -45,3 +43,11 @@ hotel facade lighting stopped working and the price to exchange the entire contr
 
 ## final conclusions
 This fix will keep the system going until the hardware fails
+
+
+
+
+img popup:
+- onclick open image-viever overlay, grow from middle, and set image as source for current image
+- make menu to x and acts as close
+- 

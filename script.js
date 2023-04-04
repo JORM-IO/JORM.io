@@ -264,13 +264,120 @@ document.addEventListener('DOMContentLoaded', function() {
             if (case_id) {
                 _.$(`.case_modal.${case_id}`).classList.add('active')
                 _.$('.hamburger').classList.toggle('no_modal')
-                _.$('.hamburger').classList.toggle('modal')
+                _.$('.hamburger').classList.toggle('case_modal_apx')
                 _.$('.hamburger').classList.toggle('active')
 
             }
             _.$('body').classList.add('no_scroll')
         })
     })
+
+    
+
+    let image_viewer_src = ''
+    _.$$('.open-image-viewer').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            image_viewer_src = e.target.getAttribute('src')
+            if (image_viewer_src) {
+                _.$(`.image-viewer`).classList.add('active')
+                let image_viewer_img = _.$('.image-viewer .image-viewer-img')
+
+                image_viewer_img.setAttribute('src', image_viewer_src)
+
+                let menu_class = _.$('.hamburger').classList
+                menu_class.toggle('img_viewer')
+                
+                if (menu_class.contains('no_modal')) {
+                    menu_class.toggle('no_modal')
+                    menu_class.toggle('active')
+                }
+
+                if(_.$('body').classList.contains('no_scroll')) {}
+                else _.$('body').classList.add('no_scroll')
+
+
+                let images = _.$$('.open-image-viewer img')
+                let image_index = 0
+                images.forEach(function(item, index) {
+                    if (item.getAttribute('src') === image_viewer_src) {
+                        image_index = index
+                    }
+                })
+
+                // insert all images in image-viewer-controls-images
+                let image_viewer_controls_images = _.$('.image-viewer-controls-images')
+                image_viewer_controls_images.innerHTML = ''
+                images.forEach(function(item) {
+                    let img = document.createElement('img')
+                    img.setAttribute('src', item.getAttribute('src'))
+                    image_viewer_controls_images.appendChild(img)
+                })
+
+                // set active image in image-viewer-controls-images
+                let image_viewer_controls_images_img = _.$$('.image-viewer-controls-images img')
+                image_viewer_controls_images_img.forEach(function(item, index) {
+                    if (index === image_index) {
+                        item.classList.add('active')
+                    }
+                })
+
+                // change image on click
+                image_viewer_controls_images_img.forEach(function(item, index) {
+                    item.addEventListener('click', function() {
+                        image_viewer_img.setAttribute('src', item.getAttribute('src'))
+                        image_viewer_controls_images_img.forEach(function(item) {
+                            item.classList.remove('active')
+                        })
+                        item.classList.add('active')
+                    })
+                })
+
+                // change image on arrow click
+                _.$('.image-viewer-prev').addEventListener('click', function() {
+                    if (image_index > 0) {
+                        image_index--
+                        image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                        image_viewer_controls_images_img.forEach(function(item) {
+                            item.classList.remove('active')
+                        })
+                        image_viewer_controls_images_img[image_index].classList.add('active')
+                    } else {
+                        image_index = images.length - 1
+                        image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                        image_viewer_controls_images_img.forEach(function(item) {
+                            item.classList.remove('active')
+                        })
+                        image_viewer_controls_images_img[image_index].classList.add('active')
+                    }
+                })
+
+                _.$('.image-viewer-next').addEventListener('click', function() {
+                    if (image_index < images.length - 1) {
+                        image_index++
+                        image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                        image_viewer_controls_images_img.forEach(function(item) {
+                            item.classList.remove('active')
+                        })
+                        image_viewer_controls_images_img[image_index].classList.add('active')
+                    } else {
+                        image_index = 0
+                        image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                        image_viewer_controls_images_img.forEach(function(item) {
+                            item.classList.remove('active')
+                        })
+                        image_viewer_controls_images_img[image_index].classList.add('active')
+                    }
+                })
+
+                // 
+
+            }
+        })
+    })
+
+
+
+
 
     _.$('.hamburger').addEventListener('click', function() {
         if (_.$('.hamburger').classList.contains('no_modal')) {
@@ -282,14 +389,26 @@ document.addEventListener('DOMContentLoaded', function() {
             _.$('body').classList.toggle('no_scroll')
             _.$('.logo_small').classList.toggle('no_mix_blend_mode')
             _.$('.hamburger').classList.toggle('no_mix_blend_mode')
-            console.log('no modal')
-        } else {
+        }
+        else if (_.$('.hamburger').classList.contains('img_viewer')) {
+            _.$(`.image-viewer`).classList.remove('active')
+            _.$('.hamburger').classList.toggle('img_viewer')
+            
+
+            if (_.$('.hamburger').classList.contains('case_modal_apx')) {
+                console.log('case modal is active')
+            }
+            else {
+                _.$('body').classList.remove('no_scroll')
+                _.$('.hamburger').classList.toggle('no_modal')
+                _.$('.hamburger').classList.toggle('active')
+            }
+        }
+        else {
             _.$(`.case_modal.${case_id}`).classList.remove('active')
             _.$('body').classList.remove('no_scroll')
             _.$('.hamburger').classList.toggle('no_modal')
-            _.$('.hamburger').classList.toggle('modal')
             _.$('.hamburger').classList.toggle('active')
-            console.log('modal')
         }
     })
 
