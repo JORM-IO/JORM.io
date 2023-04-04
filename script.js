@@ -467,7 +467,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         else {
-            _.$(`.case_modal.${case_id}`).classList.remove('active')
+            _.$(`.case_modal.active`).classList.remove('active')
+            // _.$(`.case_modal.${case_id}`).classList.remove('active')
             _.$('body').classList.remove('no_scroll')
             _.$('.hamburger').classList.toggle('no_modal')
             _.$('.hamburger').classList.toggle('active')
@@ -481,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('scroll', function(event) {
             let scrollTop = event.target.scrollTop
             let case_id = item.parentNode.classList[1]
-            console.log(case_id)
+            // console.log(case_id)
 
 
             requestAnimationFrame(function() {
