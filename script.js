@@ -305,32 +305,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
 
                 // insert all images in image-viewer-controls-images
-                let image_viewer_controls_images = _.$('.image-viewer-controls-images')
-                image_viewer_controls_images.innerHTML = ''
-                images.forEach(function(item) {
-                    let img = document.createElement('img')
-                    img.setAttribute('src', item.getAttribute('src'))
-                    image_viewer_controls_images.appendChild(img)
-                })
+                // let image_viewer_controls_images = _.$('.image-viewer-controls-images')
+                // image_viewer_controls_images.innerHTML = ''
+                // images.forEach(function(item) {
+                //     let img = document.createElement('img')
+                //     img.setAttribute('src', item.getAttribute('src'))
+                //     image_viewer_controls_images.appendChild(img)
+                // })
 
-                // set active image in image-viewer-controls-images
-                let image_viewer_controls_images_img = _.$$('.image-viewer-controls-images img')
-                image_viewer_controls_images_img.forEach(function(item, index) {
-                    if (index === image_index) {
-                        item.classList.add('active')
-                    }
-                })
+                // // set active image in image-viewer-controls-images
+                // let image_viewer_controls_images_img = _.$$('.image-viewer-controls-images img')
+                // image_viewer_controls_images_img.forEach(function(item, index) {
+                //     if (index === image_index) {
+                //         item.classList.add('active')
+                //     }
+                // })
 
                 // change image on click
-                image_viewer_controls_images_img.forEach(function(item, index) {
-                    item.addEventListener('click', function() {
-                        image_viewer_img.setAttribute('src', item.getAttribute('src'))
-                        image_viewer_controls_images_img.forEach(function(item) {
-                            item.classList.remove('active')
-                        })
-                        item.classList.add('active')
-                    })
-                })
+                // image_viewer_controls_images_img.forEach(function(item, index) {
+                //     item.addEventListener('click', function() {
+                //         image_viewer_img.setAttribute('src', item.getAttribute('src'))
+                //         image_viewer_controls_images_img.forEach(function(item) {
+                //             item.classList.remove('active')
+                //         })
+                //         item.classList.add('active')
+                //     })
+                // })
 
                 // change image on arrow click
                 _.$('.image-viewer-prev').addEventListener('click', function() {

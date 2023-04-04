@@ -1230,6 +1230,7 @@ main {
     cursor: pointer;
     padding-top: 15px;
     transition: all 0.3s ease-out;
+    user-select: none;
 }
 .image-viewer-controls > div {
     display: flex;
@@ -1238,12 +1239,14 @@ main {
     transition: all 0.3s ease-out;
 }
 .image-viewer-controls > div:first-child > img {
+    margin-left: auto;
     width: 24px;
     height: 24px;
     transform: rotate(90deg);
     transition: all 0.3s ease-out;
 }
 .image-viewer-controls > div:last-child > img {
+    margin-right: auto;
     width: 24px;
     height: 24px;
     transform: rotate(-90deg);
