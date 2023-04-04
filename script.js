@@ -336,17 +336,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (image_index > 0) {
                         image_index--
                         image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
-                        image_viewer_controls_images_img.forEach(function(item) {
-                            item.classList.remove('active')
-                        })
-                        image_viewer_controls_images_img[image_index].classList.add('active')
+                        // image_viewer_controls_images_img.forEach(function(item) {
+                        //     item.classList.remove('active')
+                        // })
+                        // image_viewer_controls_images_img[image_index].classList.add('active')
                     } else {
                         image_index = images.length - 1
                         image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
-                        image_viewer_controls_images_img.forEach(function(item) {
-                            item.classList.remove('active')
-                        })
-                        image_viewer_controls_images_img[image_index].classList.add('active')
+                        // image_viewer_controls_images_img.forEach(function(item) {
+                        //     item.classList.remove('active')
+                        // })
+                        // image_viewer_controls_images_img[image_index].classList.add('active')
                     }
                 })
 
