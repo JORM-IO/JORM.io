@@ -369,7 +369,70 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 })
 
-                // 
+                // change to next image on click on main image
+                image_viewer_img.addEventListener('click', function() {
+                    if (image_index < images.length - 1) {
+                        image_index++
+                        image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                        image_viewer_controls_images_img.forEach(function(item) {
+                            item.classList.remove('active')
+                        })
+                        image_viewer_controls_images_img[image_index].classList.add('active')
+                    } else {
+                        image_index = 0
+                        image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                        image_viewer_controls_images_img.forEach(function(item) {
+                            item.classList.remove('active')
+                        })
+                        image_viewer_controls_images_img[image_index].classList.add('active')
+                    }
+                })
+
+                // chnage to next image on swipe    
+                let image_viewer_img_touchstart_x = 0
+                let image_viewer_img_touchend_x = 0
+                image_viewer_img.addEventListener('touchstart', function(e) {
+                    image_viewer_img_touchstart_x = e.changedTouches[0].screenX
+                }
+                , false) 
+                image_viewer_img.addEventListener('touchend', function(e) {
+                    image_viewer_img_touchend_x = e.changedTouches[0].screenX
+                    if (image_viewer_img_touchstart_x > image_viewer_img_touchend_x) {
+                        if (image_index < images.length - 1) {
+                            image_index++
+                            image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                            image_viewer_controls_images_img.forEach(function(item) {
+                                item.classList.remove('active')
+                            })
+                            image_viewer_controls_images_img[image_index].classList.add('active')
+                        } else {
+                            image_index = 0
+                            image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                            image_viewer_controls_images_img.forEach(function(item) {
+                                item.classList.remove('active')
+                            })
+                            image_viewer_controls_images_img[image_index].classList.add('active')
+                        }
+                    }
+                    if (image_viewer_img_touchstart_x < image_viewer_img_touchend_x) {
+                        if (image_index > 0) {
+                            image_index--
+                            image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                            image_viewer_controls_images_img.forEach(function(item) {
+                                item.classList.remove('active')
+                            })
+                            image_viewer_controls_images_img[image_index].classList.add('active')
+                        } else {
+                            image_index = images.length - 1
+                            image_viewer_img.setAttribute('src', images[image_index].getAttribute('src'))
+                            image_viewer_controls_images_img.forEach(function(item) {
+                                item.classList.remove('active')
+                            })
+                            image_viewer_controls_images_img[image_index].classList.add('active')
+                        }
+                    }
+                }, false)
+
 
             }
         })
@@ -409,6 +472,7 @@ document.addEventListener('DOMContentLoaded', function() {
             _.$('body').classList.remove('no_scroll')
             _.$('.hamburger').classList.toggle('no_modal')
             _.$('.hamburger').classList.toggle('active')
+            
         }
     })
 
@@ -417,7 +481,8 @@ document.addEventListener('DOMContentLoaded', function() {
     _.$$('.case_modal_outer').forEach(function(item) {
         item.addEventListener('scroll', function(event) {
             let scrollTop = event.target.scrollTop
-
+            let case_id = item.parentNode.classList[1]
+            console.log(case_id)
 
 
             requestAnimationFrame(function() {
